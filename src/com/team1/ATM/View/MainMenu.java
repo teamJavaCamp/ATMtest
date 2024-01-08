@@ -1,15 +1,15 @@
-package com.team1.ATM;
+package com.team1.ATM.View;
 
-import com.team1.ATM.User.UserDTO;
+import com.team1.ATM.ManagerMode;
+import com.team1.ATM.DTO.UserDTO;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class BankMainPage {
+public class MainMenu {
 
     Scanner sc = new Scanner(System.in);
     UserDTO user = new UserDTO();
-    RegisterPage registerPage = new RegisterPage();
+    RegisterMenu registerPage = new RegisterMenu();
     ManagerMode managerMode = new ManagerMode();
 
     public void mainMenu() {
@@ -44,16 +44,16 @@ public class BankMainPage {
             String password = sc.nextLine();
 
             if (username.equals(user.getName()) && password.equals(user.getPass())) {
-                System.out.println("*** 온라인 뱅킹 시스템 ***");
-                System.out.println("1. 계좌 조회");
-                System.out.println("2. 입금");
-                System.out.println("3. 출금");
-                System.out.println("4. 계좌 이체");
-                System.out.println("5. 통장 정리");
+                System.out.println("*** 온라인 뱅킹 시스템 ***");   // AccountData
+                System.out.println("1. 계좌 조회");    // getBalance
+                System.out.println("2. 입금");        // deposit
+                System.out.println("3. 출금");        // withdraw
+                System.out.println("4. 계좌 이체");    // account transfer
+                System.out.println("5. 통장 정리"); // 미...
                 System.out.println("6. 개인정보 변경");
-                System.out.println("7. 예약");
+                System.out.println("7. 예약"); // 미정
                 System.out.println("8. 상품 페이지");        // 대출, 적금
-                System.out.println("9. 로그아웃");
+                System.out.println("9. 로그아웃");  // log out... return
                 System.out.print("입력할 메뉴를 선택 해주세요 : ");
             } else if (username.equals(user.getName())) {
                 System.out.println("잘못된 password");

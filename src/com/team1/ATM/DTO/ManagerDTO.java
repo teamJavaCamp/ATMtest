@@ -1,6 +1,6 @@
-package com.team1.ATM;
+package com.team1.ATM.DTO;
 
-import com.team1.ATM.User.UserDTO;
+import com.team1.ATM.DTO.UserDTO;
 
 public class ManagerDTO { // 관리자
 

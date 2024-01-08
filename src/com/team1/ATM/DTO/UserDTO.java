@@ -1,4 +1,4 @@
-package com.team1.ATM.User;
+package com.team1.ATM.DTO;
 
 public class UserDTO {
 

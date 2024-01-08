@@ -1,10 +1,10 @@
-package com.team1.ATM;
+package com.team1.ATM.View;
 
-import com.team1.ATM.User.UserDTO;
+import com.team1.ATM.DTO.UserDTO;
 
 import java.util.Scanner;
 
-public class RegisterPage {
+public class RegisterMenu {
     Scanner sc = new Scanner(System.in);
     UserDTO user = new UserDTO();
     public void register () {

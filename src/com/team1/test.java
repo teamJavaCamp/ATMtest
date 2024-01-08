@@ -1,4 +1,4 @@
-package com.team1.ATM;
+package com.team1;
 
 public class test {
 
