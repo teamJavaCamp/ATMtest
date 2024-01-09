@@ -1,5 +1,7 @@
 package com.team1.ATM.DTO;
 
+import java.util.List;
+
 public class UserDTO { // from RegisterMenu
 
     private String name;    // 이름
@@ -7,6 +9,15 @@ public class UserDTO { // from RegisterMenu
     private String pass;       // 비밀번호
     private int phoneNo;    // 전화번호
     private int bankAccNo;  // 계좌번호
+    private List<ProductDTO> product;
+
+    public List<ProductDTO> getProduct() {
+        return product;
+    }
+
+    public void setProduct(List<ProductDTO> product) {
+        this.product = product;
+    }
 
     public UserDTO() {}
     public UserDTO(String name, int age, String pass, int phoneNo, int bankAccNo) {

@@ -3,17 +3,15 @@ package com.team1.ATM.View;
 import com.team1.ATM.Manager.BankManager;
 import com.team1.ATM.DTO.UserDTO;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class LogInMenu {
-
     Scanner sc = new Scanner(System.in);
     UserDTO user = new UserDTO();
     RegisterMenu registerPage = new RegisterMenu();
     BankManager bankManager = new BankManager();
     MainMenu main = new MainMenu();
-
+    AdminMenu adminMenu = new AdminMenu();
     public void mainMenu() {
 
         while (true) {
@@ -27,11 +25,10 @@ public class LogInMenu {
             System.out.print(" 메뉴를 입력해주세요 : ");
             menu = sc.nextInt();
 
-
             switch (menu) {
                 case 1: registerPage.register(user); break;     // register menu로 이동
                 case 2: logIn(); break;                     // register한 정보로 로그인
-                case 3: bankManager.bankManagerMode(); break;   // 관리자로 로그인
+                case 3: adminMenu.adminMenu(); break;   // 관리자로 로그인
                 case 9: System.out.println("종료합니다"); return;
                 default: System.out.println("잘못 입력을 했습니다. 다시 입력 해주세요.");
             }
@@ -45,6 +42,8 @@ public class LogInMenu {
         System.out.print("비밀번호 : ");
         String password = sc.next();
 
+
+        // 문제..!
         if (username.trim().equalsIgnoreCase(user.getName()) && password.trim().equals(user.getPass())) {
             System.out.println("로그인 성공!");
             main.mainSite(); // 로그인이 성공하면 main Menu로 접속

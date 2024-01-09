@@ -1,17 +1,14 @@
 package com.team1.ATM.View;
 
 import com.team1.ATM.DTO.UserDTO;
-import com.team1.ATM.Data.AccountData;
-import com.team1.ATM.Data.ProductData;
+import com.team1.ATM.Manager.BankManager;
 
 import java.util.Scanner;
 
 public class MainMenu extends UserDTO{
-    UserDTO user = new UserDTO();
     Scanner sc = new Scanner(System.in);
     ProductMenu pm = new ProductMenu();
-    ProductData pd = new ProductData();
-    AccountData data = new AccountData();
+    BankManager bankManager = new BankManager();
     public void mainSite() {
 
         while (true) {
@@ -30,10 +27,10 @@ public class MainMenu extends UserDTO{
         int menu = sc.nextInt();
 
             switch (menu) {
-                case 1 : data.getBalance();            // 계좌 조회
-                case 2 : data.deposit();           // 입금
-                case 3 : data.withdraw();         // 출금
-                case 4 : data.transferMoney();      // 이체
+                case 1 : bankManager.getBalance();            // 계좌 조회
+                case 2 : bankManager.getDeposit();           // 입금
+                case 3 : bankManager.withdraw();         // 출금
+                case 4 : bankManager.transferMoney();      // 이체
                 case 5 : pm.ProductInfo(); break;   // 상품 조회
                 case 9 : System.out.println("로그아웃합니다"); return;
             }

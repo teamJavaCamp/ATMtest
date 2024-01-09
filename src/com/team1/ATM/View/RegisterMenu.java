@@ -25,17 +25,4 @@ public class RegisterMenu {
         int bankAcc = sc.nextInt();
         user.setBankAccNo(bankAcc);
     }
-
-    public void bankAccInfo() {
-        System.out.println("Create a bank of your choice");
-        System.out.println("1. 곡민은행 2. 저리은행 3. 신해은행");
-        int no = sc.nextInt();
-        System.out.print("Enter Account no : ");
-        int accNo = sc.nextInt();
-        System.out.print("Enter Account type : ");
-
-        System.out.print("Enter Balance : ");
-        System.out.println();
-        }
-    }
 }
