@@ -29,7 +29,7 @@ public class LogIn {
                     mm.signUp();
                     break;
 
-                case 2:
+                case 2 :
                     String result = mm.signIn();
                     if(!result.equals("")){
                         menu.mainMenu(mm.memberSignin(result));

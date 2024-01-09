@@ -27,11 +27,10 @@ public class ProductMenu {
                     mm.showMyProduct(member);
                     break;
                 case 2 :
-
-
+                    pm.subSavings(member);
                     break;
                 case 3 :
-
+                    pm.takeLoan(member);
                     break;
                 default :
                     return;

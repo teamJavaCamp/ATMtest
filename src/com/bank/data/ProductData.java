@@ -7,7 +7,10 @@ import java.util.List;
 
 public class ProductData {
 
-    private static List<Product> productList= new ArrayList<>();
+    private List<Product> productList;
+    public ProductData(){
+        productList = new ArrayList<Product>();
+    }
 
     public void addProduct(Product product){
         productList.add(product);

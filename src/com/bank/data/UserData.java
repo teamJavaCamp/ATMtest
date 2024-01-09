@@ -8,7 +8,10 @@ import java.util.Map;
 
 public class UserData {
 
-    private Map<String, MemberDTO> memberMap = new HashMap<>();
+    private Map<String, MemberDTO> memberMap;
+    public  UserData(){
+        memberMap = new HashMap<String, MemberDTO>();
+    }
 
 
     public MemberDTO getMember(String id){

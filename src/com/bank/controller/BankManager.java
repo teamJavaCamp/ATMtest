@@ -9,10 +9,6 @@ public class BankManager {
 
     private Scanner sc = new Scanner(System.in);
 
-    private MemberManager mm = new MemberManager();
-
-    private UserData userData = new UserData();
-
     public BankManager(){}              //기본생성자
 
     public void showAcc(AccountDTO acc){                //계좌 조회
@@ -71,6 +67,7 @@ public class BankManager {
             }
             acc.setBalance(acc.getBalance() - transfer );
             System.out.println("성공적으로 이체 되었습니다.");
+            return;
         }
         System.out.println("이 계좌로 보낼 수 없습니다.");
     }

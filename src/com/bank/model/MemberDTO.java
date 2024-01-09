@@ -75,8 +75,8 @@ public class MemberDTO {
         return product;
     }
 
-    public void setProduct(List<Product> product) {
-        this.product = product;
+    public void setProduct(Product product) {
+        this.product.add(product);
     }
 
     public boolean isAdmin() {

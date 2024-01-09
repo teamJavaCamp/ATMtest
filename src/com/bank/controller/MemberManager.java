@@ -76,8 +76,7 @@ public class MemberManager {
         for(int i = 0; i < accData.getList().size() + 1; i++){
             accNum = (int) (Math.random() * 999999);
             for(int j= 0; j < i; j++){
-                if(accData.getList().get(i).equals(accNum)){
-
+                if(accData.getList().get(j).equals(accNum)){
                     i--;
                     break;
                 }
@@ -93,8 +92,11 @@ public class MemberManager {
     }
 
     public void showMemberAll(){
-        System.out.println(userData.getMemberMap());
+        userData.showMembers();
+
+
     }   //회원 전체 조회
+
 
     public void showMyProduct(MemberDTO member){
         member.getProduct();
