@@ -9,7 +9,7 @@ public class ProductMenu {
     public void ProductInfo() {
 
         System.out.println("*** 상품 메뉴 ***");
-        System.out.println("");
+        System.out.println("1. ");
         // 상품 메뉴에 어떤 것을 추가를 할지...!
 
     }

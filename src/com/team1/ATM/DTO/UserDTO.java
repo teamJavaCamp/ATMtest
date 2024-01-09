@@ -1,6 +1,6 @@
 package com.team1.ATM.DTO;
 
-public class UserDTO {
+public class UserDTO { // from RegisterMenu
 
     private String name;    // 이름
     private int age;        // 나이
@@ -55,5 +55,18 @@ public class UserDTO {
 
     public void setBankAccNo(int bankAccNo) {
         this.bankAccNo = bankAccNo;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", pass='" + pass + '\'' +
+                ", phoneNo=" + phoneNo +
+                ", bankAccNo=" + bankAccNo +
+                '}';
+
+
     }
 }
