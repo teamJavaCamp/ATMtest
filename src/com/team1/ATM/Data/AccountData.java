@@ -21,7 +21,7 @@ public class AccountData {
     }
 
     public void deposit() {
-        if (accData.get)
+        if (accData.get);
     }
 
     public void withdraw() { // 출금
