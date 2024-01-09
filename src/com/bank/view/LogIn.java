@@ -40,7 +40,7 @@ public class LogIn {
                     admin.adminMain();
                     break;
 
-                case 0 :
+                default :
                     return;
             }
         }

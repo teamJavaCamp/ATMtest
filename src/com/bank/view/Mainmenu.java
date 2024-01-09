@@ -16,8 +16,6 @@ public class Mainmenu {
     private MemberManager mm = new MemberManager();
     private ProductMenu product = new ProductMenu();
 
-    UserData userData = new UserData();
-
     public Mainmenu(){}                         //기본 생성자
 
     public void mainMenu(MemberDTO member) {    //메인메뉴 메소드
@@ -57,9 +55,9 @@ public class Mainmenu {
                     System.out.println(member);
                     break;
                 case 6 :
-                    product.productMain();      //상품페이지로
+                    product.productMain(member);      //상품페이지로
                     break;
-                case 0 :
+                default :
                     return;
             }
 

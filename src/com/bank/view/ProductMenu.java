@@ -1,12 +1,19 @@
 package com.bank.view;
 
+import com.bank.controller.MemberManager;
+import com.bank.controller.ProductManager;
+import com.bank.model.MemberDTO;
+
 import java.util.Scanner;
 
 public class ProductMenu {
 
     private Scanner sc = new Scanner(System.in);
 
-    public void productMain(){
+    private MemberManager mm = new MemberManager();
+    private ProductManager pm = new ProductManager();
+
+    public void productMain(MemberDTO member){
         while(true){
             System.out.println("상품메뉴");
             System.out.println(" 1. 내 가입 상품");
@@ -17,12 +24,16 @@ public class ProductMenu {
             int num = sc.nextInt();
             switch (num) {
                 case 1:
+                    mm.showMyProduct(member);
                     break;
                 case 2 :
+
+
                     break;
                 case 3 :
+
                     break;
-                case 0 :
+                default :
                     return;
             }
         }

@@ -8,6 +8,7 @@ public class AdminMenu {
     private Scanner sc = new Scanner(System.in);
 
     private MemberManager mm = new MemberManager();
+    private EditInfoMenu edit = new EditInfoMenu();
 
     public AdminMenu(){}
 
@@ -15,8 +16,7 @@ public class AdminMenu {
 
         System.out.println("관리자 모드");
         System.out.println("1. 회원 전체 조회");
-        System.out.println("2. 상품 추가");
-        System.out.println("3. 상품 삭제");
+        System.out.println("2. 회원 정보 변경");
         System.out.println("0. 뒤로");
         System.out.print("메뉴 선택 : ");
 
@@ -28,10 +28,11 @@ public class AdminMenu {
                     mm.showMemberAll();
                     break;
                 case 2 :
+                    edit.editMenu();
                     break;
                 case 3 :
                     break;
-                case 0 :
+                default :
                     return;
             }
 
