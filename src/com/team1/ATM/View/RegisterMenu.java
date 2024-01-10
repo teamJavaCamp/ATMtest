@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class RegisterMenu {
     Scanner sc = new Scanner(System.in);
     UserDTO user = new UserDTO();
-    public void register (UserDTO user) {
+    public UserDTO register (UserDTO user) {
         System.out.print("username: ");
         String username = sc.nextLine();
         user.setName(username);
@@ -24,5 +24,6 @@ public class RegisterMenu {
         System.out.print("bank account : ");
         int bankAcc = sc.nextInt();
         user.setBankAccNo(bankAcc);
+        return user;
     }
 }

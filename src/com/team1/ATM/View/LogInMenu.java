@@ -1,5 +1,6 @@
 package com.team1.ATM.View;
 
+import com.team1.ATM.Data.UserData;
 import com.team1.ATM.Manager.BankManager;
 import com.team1.ATM.DTO.UserDTO;
 
@@ -9,7 +10,7 @@ public class LogInMenu {
     Scanner sc = new Scanner(System.in);
     UserDTO user = new UserDTO();
     RegisterMenu registerPage = new RegisterMenu();
-    BankManager bankManager = new BankManager();
+    UserData userData = new UserData();
     MainMenu main = new MainMenu();
     AdminMenu adminMenu = new AdminMenu();
     public void mainMenu() {
@@ -44,7 +45,7 @@ public class LogInMenu {
 
 
         // 문제..!
-        if (username.trim().equalsIgnoreCase(user.getName()) && password.trim().equals(user.getPass())) {
+        if (username.trim().equalsIgnoreCase(userData.userName();) && password.trim().equals(user.getPass())) {
             System.out.println("로그인 성공!");
             main.mainSite(); // 로그인이 성공하면 main Menu로 접속
         } else if (username.equals(user.getName())) { // username은 맞았지만 password는 틀리면

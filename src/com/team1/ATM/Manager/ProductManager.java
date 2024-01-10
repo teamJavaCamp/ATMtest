@@ -32,16 +32,38 @@ public class ProductManager {
     public void savings() {
 
         System.out.println("*** 적금 시스템 ***");
+
         System.out.print("월 납입 할 금액 (한도 : 50만원) : ");
         double deposit1 = sc.nextDouble();          // 납입 금액
         sc.nextLine();
         if (deposit1 > 50) {
             System.out.println("한도를 초과했습니다. 다시 입력해주세요."); return;
         }
-        System.out.print("납부할 개월수 : ");
-        double monthsToDeposit = sc.nextDouble();  // 납입할 개월수
 
-        // 굳이 ?
+        System.out.print("상품의 기간을 선택해주세요");
+        System.out.println("1) 1년 : 4%");
+        System.out.println("2) 2년 : 4.5%");
+        System.out.println("3) 4년 : 5%");
+        int monthsToDeposit = sc.nextInt();  // 납입할 개월수
+
+        while (true) {
+            double interestRate;
+            switch (monthsToDeposit) {
+                case 1:
+                    interestRate = 4.0;
+                    break;
+                case 2:
+                    interestRate = 4.5;
+                    break;
+                case 3:
+                    interestRate = 5.0;
+                    break;
+                default:
+                    System.out.println("잘못 입력을했습니다. 다시 선택해주세요");
+                    return;
+            }
+
+            // 굳이 ?
 //        if (monthsToDeposit <= 12) {
 //            double interestRate = 4.0d;
 //        } else if (monthsToDeposit <= 24) {
@@ -51,10 +73,29 @@ public class ProductManager {
 //        } else {
 //            double interestRate = 6;
 //        }
+            int years;
+            if (monthsToDeposit == 1) {
+                years = 12;
+            } else if (monthsToDeposit == 2) {
+                years = 2;
+            } else {
+                years = 4;
+            }
+            System.out.println("선택하신 상품은 " + monthsToDeposit + "번");
+            System.out.println("월 납입 할 금액 : " + deposit1 + "만원\n선택하신 이자 : " + interestRate + "%\n납부할 기간 : " + years + "년");
+            System.out.println("맞으면 1번, 아니면 2번 입력해주세요");
+            int choice = sc.nextInt();
 
-        System.out.println("월 납입 할 금액은 " + deposit1);
-        System.out.println("납부할 개월수 : " + monthsToDeposit);
+            while (true) {
+                switch (choice) {
+                    case 1:
+                        continue;
+                    case 2:
+                        return;
+                }
 
+            }
+        }
         // balance에서 자동으로 돈이 빠지는 걸로..!
     }
     public void loan() {
