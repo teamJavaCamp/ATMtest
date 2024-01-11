@@ -2,39 +2,39 @@ package com.bank.model;
 
 public class Loan extends Product {
 
-    private float loanRate;     //이자율
-    private int loanLimit;        //최대 대출 가능 금액
+    private double loanRate;     //이자율
+    private int takeLoan;        //최대 대출 가능 금액
 
     public Loan() {
     }
 
-    public Loan(String productName, int period, float loanRate, int loanLimit) {
-        super(productName, period);
+    public Loan(int type, int period, double loanRate, int takeLoan) {
+        super(type, period);
         this.loanRate = loanRate;
-        this.loanLimit = loanLimit;
+        this.takeLoan = takeLoan;
     }
 
-    public float getLoanRate() {
+    public double getLoanRate() {
         return loanRate;
     }
 
-    public void setLoanRate(float loanRate) {
+    public void setLoanRate(double loanRate) {
         this.loanRate = loanRate;
     }
 
-    public int getLoanLimit() {
-        return loanLimit;
+    public int getTakeLoan() {
+        return takeLoan;
     }
 
-    public void setLoanLimit(int loanLimit) {
-        this.loanLimit = loanLimit;
+    public void setTakeLoan(int takeLoan) {
+        this.takeLoan = takeLoan;
     }
 
     @Override
     public String toString() {
-        return "Loan{" +
-                "loanRate=" + loanRate +
-                ", loanLimit=" + loanLimit +
-                '}';
+        return "대출\n" +
+                "대출금액 : " + takeLoan + "\n" +
+                "이자율 : " + loanRate + "% \n" +
+                "상환기간 : " + super.getPeriod() + " 개월";
     }
 }

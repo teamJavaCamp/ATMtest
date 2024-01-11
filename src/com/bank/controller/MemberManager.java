@@ -1,43 +1,48 @@
 package com.bank.controller;
 
 import com.bank.data.AccountData;
-import com.bank.data.UserData;
+import com.bank.data.MemberData;
 import com.bank.model.AccountDTO;
 import com.bank.model.MemberDTO;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class MemberManager {
 
     private Scanner sc = new Scanner(System.in);
-    private UserData userData = new UserData();     //회원 데이터
+    private MemberData memberData = new MemberData();     //회원 데이터
     private AccountData accData = new AccountData();
     public MemberManager(){}
 
     public void signUp(){
+        System.out.println("===== 회원가입 =====");
         System.out.print("이름 : ");
         String name = sc.nextLine();
 
-        System.out.print("나이");
+        System.out.print("나이 : ");
         int age = sc.nextInt();
         sc.nextLine();
 
-        System.out.print("성별");
+        System.out.print("성별 : ");
         char gender = sc.nextLine().charAt(0);
 
         System.out.print("id : ");
         String id = sc.nextLine();
 
-        if(!userData.getMemberMap().containsKey(id)){
+        if(!memberData.getMemberMap().containsKey(id)){
 
-            System.out.print("pwd : ");
+            System.out.print("password : ");
             String pwd = sc.nextLine();
 
             MemberDTO member = new MemberDTO(name, age, gender, id, pwd);
 
-            userData.addMember(id, member);
+            memberData.addMember(id, member);
             creatAccount(member);
-            System.out.println("회원가입이 완료되었습니다. ");
+
+            System.out.println();
+            System.out.println(" ** 회원가입이 완료되었습니다. **");
+            System.out.println();
 
         }
 
@@ -47,27 +52,34 @@ public class MemberManager {
 
         System.out.print("id : ");
         String id = sc.nextLine();
-        if(userData.getMemberMap().containsKey(id)){
-            System.out.print("pwd : ");
+        if(memberData.getMemberMap().containsKey(id)){
+            System.out.print("password : ");
             String pwd = sc.nextLine();
-            MemberDTO member = userData.getMember(id);
+            MemberDTO member = memberData.getMember(id);
 
             if(member.getPwd().equals(pwd)){
+                System.out.println();
+                System.out.println(" ** 로그인에 성공하였습니다 **");
+                System.out.println();
                 return id;
 
             }else {
-                System.out.println("비밀번호가 틀립니다.");
+                System.out.println();
+                System.out.println(" ** 비밀번호가 틀립니다. ** ");
+                System.out.println();
             }
 
         }else {
-            System.out.println("등록된 아이디가 없습니다.");
+            System.out.println();
+            System.out.println(" ** 등록된 아이디가 없습니다. ** ");
+            System.out.println();
         }
         return "";
 
     }
 
     public MemberDTO memberSignin(String id){
-        return userData.getMember(id);
+        return memberData.getMember(id);
     } //회원객체 전달
 
     public void creatAccount(MemberDTO member){
@@ -92,9 +104,7 @@ public class MemberManager {
     }
 
     public void showMemberAll(){
-        userData.showMembers();
-
-
+        memberData.showMembers();
     }   //회원 전체 조회
 
 
@@ -102,39 +112,83 @@ public class MemberManager {
         member.getProduct();
     }                                           // 내 가입 상품 조회
 
-    public void editInfo(int select, MemberDTO member){
+    public void editInfo(){
 
-        while(true){
-            switch(select){
-                case 1 :
-                    System.out.print("변경할 이름 : ");
-                    String name = sc.nextLine();
-                    member.setName(name);
-                    userData.addMember(member.getId(), member); //변경하고 다시 저장
+        System.out.print("변경할 회원 아이디 : ");
+        String id = sc.nextLine();
 
-                case 2 :
-                    System.out.print("변경할 나이 : ");
-                    int age = sc.nextInt();
-                    member.setAge(age);
-                    userData.addMember(member.getId(), member);
+        if(memberData.getMemberMap().containsKey(id)){
+            MemberDTO member = memberData.getMember(id);
+            while(true) {
 
+                System.out.println("===== 회원 정보 변경 =====");
 
-                case 3 :
-                    System.out.println("변경할 성별 : ");
-                    char gender = sc.nextLine().charAt(0);
-                    member.setGender(gender);
-                    userData.addMember(member.getId(), member);
+                System.out.println("1. 이름");
+                System.out.println("2. 나이");
+                System.out.println("3. 성별");
+                System.out.println("4. 패스워드");
+                System.out.println("0. 뒤로");
 
-                case 4 :
-                    System.out.println("변경할 비밀번호 : ");
-                    String pwd = sc.nextLine();
-                    member.setPwd(pwd);
-                    userData.addMember(member.getId(), member);
+                System.out.print("변경할 정보를 고르세요 : ");
+                int select = sc.nextInt();
+                sc.nextLine();
 
-                case 0 :
-                    break;
+                switch (select) {
+                    case 1:
+                        System.out.print("변경할 이름 : ");
+                        String name = sc.nextLine();
+                        member.setName(name);
 
+                        System.out.println();
+                        System.out.println(" ** 변경이 완료되었습니다. ** ");
+                        System.out.println();
+                        break;
+
+                    case 2:
+                        System.out.print("변경할 나이 : ");
+                        int age = sc.nextInt();
+                        member.setAge(age);
+
+                        System.out.println();
+                        System.out.println(" ** 변경이 완료되었습니다. ** ");
+                        System.out.println();
+                        break;
+
+                    case 3:
+                        System.out.println("변경할 성별 : ");
+                        char gender = sc.nextLine().charAt(0);
+                        member.setGender(gender);
+
+                        System.out.println();
+                        System.out.println(" ** 변경이 완료되었습니다. ** ");
+                        System.out.println();
+                        break;
+
+                    case 4:
+                        System.out.println("변경할 비밀번호 : ");
+                        String pwd = sc.nextLine();
+                        member.setPwd(pwd);
+
+                        System.out.println();
+                        System.out.println(" ** 변경이 완료되었습니다. ** ");
+                        System.out.println();
+                        break;
+
+                    case 0:
+                        return;
+
+                    default:
+                        System.out.println();
+                        System.out.println(" ** 잘못된 입력입니다. ** ");
+                        System.out.println();
+                        break;
+                }
             }
+
+        }else {
+            System.out.println();
+            System.out.println(" ** 회원을 찾을 수 없습니다. **");
+            System.out.println();
         }
     }
 }

@@ -2,7 +2,6 @@ package com.bank.view;
 
 import com.bank.controller.BankManager;
 import com.bank.controller.MemberManager;
-import com.bank.data.UserData;
 import com.bank.model.AccountDTO;
 import com.bank.model.MemberDTO;
 
@@ -26,7 +25,7 @@ public class Mainmenu {
         AccountDTO acc = member.getAccount(); //회원이 가진 계좌
 
         while(true){
-            System.out.println("메인메뉴");
+            System.out.println(" ===== 메인메뉴 =====");
             System.out.println("1. 계좌 조회");
             System.out.println("2. 입금");
             System.out.println("3. 출금");

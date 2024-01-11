@@ -2,38 +2,23 @@ package com.bank.model;
 
 public class Product {
 
-    private String productName;     //상품명
-    private int Type;               //상품타입 (1.적금 / 2.대출)
+    private int type;               //상품타입 (1.적금 / 2.대출)
     private int period;             //가입기간, 대출기한
 
     public Product() {
     }
 
-    public Product(String productName, int type, int period) {
-        this.productName = productName;
-        Type = type;
+    public Product(int type, int period) {
+        this.type = type;
         this.period = period;
-    }
-
-    public Product(String productName, int period) {
-        this.productName = productName;
-        this.period = period;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
     }
 
     public int getType() {
-        return Type;
+        return type;
     }
 
     public void setType(int type) {
-        Type = type;
+        this.type = type;
     }
 
     public int getPeriod() {
@@ -47,8 +32,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "productName='" + productName + '\'' +
-                ", Type=" + Type +
+                "type=" + type +
                 ", period=" + period +
                 '}';
     }

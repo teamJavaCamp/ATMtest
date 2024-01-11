@@ -1,5 +1,6 @@
 package com.bank.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MemberDTO {
@@ -10,7 +11,7 @@ public class MemberDTO {
     private String id;          //아이디
     private String pwd;         //패스워드
     private AccountDTO account; //계좌
-    private List<Product> product; //가입된 상품
+    private List<Product> product = new ArrayList<>(); //가입된 상품
     private boolean isAdmin;    //관리자면 true 아니면 false
 
     public MemberDTO(){}        //회원DTO 기본 생성자
@@ -87,16 +88,20 @@ public class MemberDTO {
         isAdmin = admin;
     }
 
+    public void addProduct(Product product){
+        this.product.add(product);
+    }
+
+
     @Override
     public String toString() {
-        return "MemberDTO{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", gender=" + gender +
-                ", id='" + id + '\'' +
-                ", pwd='" + pwd + '\'' +
-                ", account=" + account +
-                ", product=" + product +
-                '}';
+        return
+                "이름 : " + name + "\n" +
+                "나이 : " + age + "\n" +
+                "성별 : " + gender + "\n" +
+                "id : " + id + "\n" +
+                "password : " + pwd + "\n" +
+                "계좌번호 : " + account.getAccNum() + "\n" +
+                "내 가입 상품 \n" + product;
     }
 }

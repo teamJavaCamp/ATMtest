@@ -8,7 +8,6 @@ public class AdminMenu {
     private Scanner sc = new Scanner(System.in);
 
     private MemberManager mm = new MemberManager();
-    private EditInfoMenu edit = new EditInfoMenu();
 
     public AdminMenu(){}
 
@@ -27,7 +26,7 @@ public class AdminMenu {
                     mm.showMemberAll();
                     break;
                 case 2 :
-                    edit.editMenu();
+                    mm.editInfo();
                     break;
                 default :
                     return;

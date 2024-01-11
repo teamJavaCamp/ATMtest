@@ -4,23 +4,24 @@ import com.bank.controller.MemberManager;
 
 import java.util.Scanner;
 
-public class LogIn {
+public class LogInMenu {
     private Scanner sc = new Scanner(System.in);
     private MemberManager mm = new MemberManager();
     private Mainmenu menu = new Mainmenu();
     private AdminMenu admin = new AdminMenu();
 
-    public LogIn(){}            //로그인메뉴 생성자
+    public LogInMenu(){}            //로그인메뉴 생성자
 
     public void LoginMenu(){
 
         while(true){
-            System.out.println("로그인 메뉴");
-            System.out.println("1. 회원가입");
-            System.out.println("2. 로그인");
-            System.out.println("3. 관리자 모드");
-            System.out.println("0. 종료");
-            System.out.print("메뉴 선택 : ");
+            System.out.println("======로그인 메뉴=====");
+            System.out.println("    1. 회원가입");
+            System.out.println("    2. 로그인");
+            System.out.println("    3. 관리자 모드");
+            System.out.println("    0. 종료");
+            System.out.println("===================");
+            System.out.print("메뉴를 선택하세요 : ");
 
             int num = sc.nextInt();
 
@@ -35,13 +36,16 @@ public class LogIn {
                         menu.mainMenu(mm.memberSignin(result));
                     }
                     break;
-
                 case 3 :
                     admin.adminMain();
                     break;
-
-                default :
+                case 0 :
                     return;
+                default :
+                    System.out.println();
+                    System.out.println(" ** 잘못된 입력입니다. **");
+                    System.out.println();
+                    break;
             }
         }
     }

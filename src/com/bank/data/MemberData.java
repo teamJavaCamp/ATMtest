@@ -3,13 +3,14 @@ package com.bank.data;
 import com.bank.model.MemberDTO;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 
-public class UserData {
+public class MemberData {
 
-    private Map<String, MemberDTO> memberMap;
-    public  UserData(){
+    private static Map<String, MemberDTO> memberMap;
+    public MemberData(){
         memberMap = new HashMap<String, MemberDTO>();
     }
 
@@ -31,10 +32,17 @@ public class UserData {
     }
 
     public void showMembers() {
-        for (MemberDTO member : memberMap.values()) {
-            System.out.println(member);
+        Iterator<String> keyIter = memberMap.keySet().iterator();
+        System.out.println("1");
+
+        while(keyIter.hasNext()) {
+            String key = keyIter.next();
+            MemberDTO value = memberMap.get(key);
+            System.out.println(value);
         }
     }
+
+
 
 
 
