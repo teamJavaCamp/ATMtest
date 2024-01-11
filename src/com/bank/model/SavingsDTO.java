@@ -1,14 +1,14 @@
 package com.bank.model;
 
-public class Savings extends Product{
+public class SavingsDTO extends ProductDTO {
 
     private double interestRate;     //금리
     private int monthly;            //매달 납입 금액
 
-    public Savings() {
+    public SavingsDTO() {
     }
 
-    public Savings(int type, int period, float interestRate, int monthly) {
+    public SavingsDTO(int type, int period, double interestRate, int monthly) {
         super(type, period);
         this.interestRate = interestRate;
         this.monthly = monthly;
@@ -32,9 +32,9 @@ public class Savings extends Product{
 
     @Override
     public String toString() {
-        return "Savings{" +
-                "interestRate=" + interestRate +
-                ", monthly=" + monthly +
-                '}';
+        return " * 적금" + "\n" +
+                "금리 : " + interestRate + "\n" +
+                "월납입금 : " + monthly + "만원 \n" +
+                "가입기간 : " + super.getPeriod() + "개월 \n";
     }
 }

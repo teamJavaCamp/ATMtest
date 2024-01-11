@@ -11,8 +11,8 @@ public class MemberDTO {
     private String id;          //아이디
     private String pwd;         //패스워드
     private AccountDTO account; //계좌
-    private List<Product> product = new ArrayList<>(); //가입된 상품
-    private boolean isAdmin;    //관리자면 true 아니면 false
+    private List<ProductDTO> product = new ArrayList<>(); //가입된 상품
+
 
     public MemberDTO(){}        //회원DTO 기본 생성자
 
@@ -72,23 +72,15 @@ public class MemberDTO {
         this.account = account;
     }
 
-    public List<Product> getProduct() {
+    public List<ProductDTO> getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct(ProductDTO product) {
         this.product.add(product);
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
-    }
-
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
-    }
-
-    public void addProduct(Product product){
+    public void addProduct(ProductDTO product){
         this.product.add(product);
     }
 

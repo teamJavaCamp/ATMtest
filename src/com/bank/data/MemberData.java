@@ -10,6 +10,7 @@ import java.util.Map;
 public class MemberData {
 
     private static Map<String, MemberDTO> memberMap;
+
     public MemberData(){
         memberMap = new HashMap<String, MemberDTO>();
     }
@@ -33,7 +34,6 @@ public class MemberData {
 
     public void showMembers() {
         Iterator<String> keyIter = memberMap.keySet().iterator();
-        System.out.println("1");
 
         while(keyIter.hasNext()) {
             String key = keyIter.next();

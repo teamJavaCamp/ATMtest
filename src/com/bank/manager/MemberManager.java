@@ -1,11 +1,10 @@
-package com.bank.controller;
+package com.bank.manager;
 
 import com.bank.data.AccountData;
 import com.bank.data.MemberData;
 import com.bank.model.AccountDTO;
 import com.bank.model.MemberDTO;
 
-import java.util.Map;
 import java.util.Scanner;
 
 public class MemberManager {
@@ -83,12 +82,19 @@ public class MemberManager {
     } //회원객체 전달
 
     public void creatAccount(MemberDTO member){
-        int accNum =0;
+        int[] accNum = new int [7];
+        String accN = "";
 
         for(int i = 0; i < accData.getList().size() + 1; i++){
-            accNum = (int) (Math.random() * 999999);
-            for(int j= 0; j < i; j++){
-                if(accData.getList().get(j).equals(accNum)){
+            accN = "";
+
+            for(int j = 0; j < accNum.length; j++){
+                accNum[j] = (int) (Math.random() * 9);
+                accN += accNum[j]+"";
+            }
+
+            for(int k = 0; k < i; k++){
+                if(accData.getList().get(k).getAccNum().equals(accN)){
                     i--;
                     break;
                 }
@@ -96,7 +102,7 @@ public class MemberManager {
         }
                 //계좌번호 난수 생성
 
-        AccountDTO acc = new AccountDTO(accNum, 0);
+        AccountDTO acc = new AccountDTO(accN, 0);
 
         accData.addAccount(acc); //리스트에 담기
         member.setAccount(acc); //회원정보에 계좌정보저장
@@ -109,7 +115,7 @@ public class MemberManager {
 
 
     public void showMyProduct(MemberDTO member){
-        member.getProduct();
+        System.out.println(member.getProduct());
     }                                           // 내 가입 상품 조회
 
     public void editInfo(){

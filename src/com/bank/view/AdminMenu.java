@@ -1,6 +1,6 @@
 package com.bank.view;
 
-import com.bank.controller.MemberManager;
+import com.bank.manager.MemberManager;
 
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
 package com.bank.view;
 
-import com.bank.controller.BankManager;
-import com.bank.controller.MemberManager;
+import com.bank.manager.BankManager;
+import com.bank.manager.MemberManager;
 import com.bank.model.AccountDTO;
 import com.bank.model.MemberDTO;
 

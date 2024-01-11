@@ -1,4 +1,4 @@
-package com.bank.controller;
+package com.bank.manager;
 
 import com.bank.model.AccountDTO;
 
@@ -13,7 +13,7 @@ public class BankManager {
     public void showAcc(AccountDTO acc){                //계좌 조회
         System.out.println("====== 내 계좌 정보 ======");
         System.out.println("계좌번호 : " + acc.getAccNum());
-        System.out.println("   잔고 :  " + acc.getBalance() + " 원");
+        System.out.println("   잔고 : " + acc.getBalance() + " 원");
     }
 
     public void deposit(AccountDTO acc){                //입금
@@ -64,9 +64,9 @@ public class BankManager {
     public void transfer(AccountDTO acc){             //이체
 
         System.out.print("어떤 계좌로 돈을 보낼까요? : ");
-        int accNum = sc.nextInt();
+        String accNum = sc.nextLine();
 
-        if(acc.getAccNum() != (accNum)){          //내 계좌로는 보낼 수 없다.
+        if(!acc.getAccNum().equals(accNum)){          //내 계좌로는 보낼 수 없다.
 
             System.out.print("이체할 금액 : ");
             long transfer = sc.nextLong();
