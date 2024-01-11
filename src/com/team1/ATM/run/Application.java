@@ -17,6 +17,8 @@ public class Application {
 //        main.mainSite();
 
         ProductManager pm = new ProductManager();
-        pm.productTypes();
+//        pm.productTypes();
+        pm.savings();
+
     }
 }
