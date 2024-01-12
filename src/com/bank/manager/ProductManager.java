@@ -36,14 +36,14 @@ public class ProductManager {
         }else if(interestRate == 5.0){
             period = 48;
         }
-        System.out.println("==============================");
+        System.out.println("========= 가입한 상품 =========");
         System.out.println("월 납입금 : " + deposit + "만원");
         System.out.println("금리 : " + interestRate + "%") ;
         System.out.println("가입기간 : " + period + "개월");
         System.out.println("==============================");
 
         System.out.println("선택한 상품이 맞습니까 ?");
-        System.out.print("1)네    2)아니요    : ");
+        System.out.print("1) 네    2) 아니요    : ");
         int num = sc.nextInt();
         switch(num){
             case 1 :

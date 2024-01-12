@@ -33,6 +33,7 @@ public class Mainmenu {
             System.out.println("5. 마이페이지");
             System.out.println("6. 상품페이지");
             System.out.println("0. 로그아웃");
+            System.out.print("메뉴를 선택하세요 : ");
 
 
             int num = sc.nextInt();

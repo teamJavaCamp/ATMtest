@@ -64,8 +64,9 @@ public class BankManager {
     public void transfer(AccountDTO acc){             //이체
 
         System.out.print("어떤 계좌로 돈을 보낼까요? : ");
-        String accNum = sc.nextLine();
-        System.out.println();
+//        String accNum = sc.nextLine();
+        String accNum = sc.next();
+//        System.out.println();
 
         if(acc.getAccNum().equals(accNum)) {                //내 계좌로는 보낼 수 없다.
             System.out.println();
