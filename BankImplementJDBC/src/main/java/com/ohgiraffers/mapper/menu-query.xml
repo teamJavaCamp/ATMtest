@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="registMember">
+        INSERT INTO tbl_user(id ,pwd ,name ,age ,gender ,account ,balance )
+        VALUES( ? ,? ,? ,? ,? ,? ,? )
+    </entry>
+
+    <entry key="Login">
+        SELECT * FROM tbl_member WHERE id = ? AND pwd = ?
+    </entry>
+
+    <entry key="SelectWhichProduct">
+        INSERT INTO tbl_product(id, typee)
+        VALUES( ?, ?)
+    </entry>
+
+    <entry key="SavingsInterestRateAndDuration">
+        INSERT INTO tbl_savings (interest_rate, duration, savings_amount)
+        VALUES (?, ?, ?)
+    </entry>
+
+    <entry key="LoanInterestRateAndDuration">
+        INSERT INTO tbl_loan (interest_rate, duration, loan_amount)
+        VALUES (?, ?, ?)
+    </entry>
+
+</properties>
